@@ -1,0 +1,17 @@
+﻿@model BorrowedBook
+
+<form asp-controller="LoanBook" asp-action="Add" method="post">
+
+    <label for="bookId">Bok</label>
+    <input asp-for="Id" type="number" id="bookId" name="BookId" />
+    <br />
+    <label for="CustomerId">Låntagare</label>
+    <input asp-for="Id" type="number" id="CustomerId" name="CustomerId" />
+    <br />
+    <label for="startDate">Startdatum</label>
+    <input asp-for="StartDate" type="date" id="startDate" name="StartOfLoanPeriod" />
+    <br />
+    <label for="endDate">Slutdatum</label>
+    <input asp-for="EndDate" type="date" id="endDate" name="EndOfLoanPeriod" value="{startDate} + 7" />
+    <button type="submit">Lägg till</button>
+</form>
