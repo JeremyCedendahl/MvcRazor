@@ -1,0 +1,30 @@
+﻿@model BorrowedBook
+
+
+<form asp-controller="LoanBook" asp-action="ReturnLoan">
+    <label for="id">Id</label>
+    <input asp-for="Id" type="number" id="id" name="BorrowedBookId" value="@Model.Id" readonly />
+    <br />
+    <label for="bookId">Bok</label>
+    <input asp-for="Id" type="number" id="bookId" value="@Model.BookId" readonly />
+    <br />
+
+    <label for="CustomerId">Låntagare</label>
+    <input asp-for="Id" type="number" id="CustomerId" name="CustomerId" value="@Model.CustomerId" readonly />
+    <br />
+
+    <label for="startDate">Startdatum</label>
+    <input asp-for="StartDate" type="text" id="startDate" name="StartOfLoanPeriod" value="@Model.StartDate.ToString()" readonly />
+    <br />
+
+    <label for="endDate">Slutdatum</label>
+    <input type="text" id="endDate" value="@Model.EndDate.ToString()" readonly />
+    <br />
+
+    <label for="returnDate">Återlämnad</label>
+    <input asp-for="EndDate" type="date" id="returnDate" name="EndOfLoanPeriod" />
+    <br />
+    <button type="submit">Lämna tillbaka bok</button>
+    
+</form>
+<button asp-controller="LoanBook" asp-action="Details" type="submit">Tillbaka</button>
